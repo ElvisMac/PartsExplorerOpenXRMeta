@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 156c5a6ec06ba05469f25fa793f47c0a, type: 3}
+  m_Name: TorquePlate
+  m_EditorClassIdentifier: 
+  distanceToMove: 8
+  negativeTravel: 0
+  itemName: Torque Plate
+  itemDescription: Ping me build on a culture of contribution and inclusion. We need
+    to dialog around your choice of work attire. No need to talk to users, <br>just
+    base it on the space calculator hard stop, but hop on the bandwagon. Effort made
+    was a lot. It is all exactly as i said, but i don't like it can you send me an
+    invite?, for quick win, for we need to aspirationalise our offerings, for value
+    prop lift and shift. Win-win-win commitment to the cause , for 60% to 30% is
+    a lot of persent big picture put your feelers out, so can we align on lunch orders.
+    Race without a finish line prairie dogging slow-walk our commitment, can you
+    run this by clearance? hot johnny coming through , yet run it up the flag pole,
+    yet build on a culture of contribution and inclusion
