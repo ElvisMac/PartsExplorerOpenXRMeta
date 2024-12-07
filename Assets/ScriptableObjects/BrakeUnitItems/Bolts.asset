@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 156c5a6ec06ba05469f25fa793f47c0a, type: 3}
+  m_Name: Bolts
+  m_EditorClassIdentifier: 
+  distanceToMove: 10
+  negativeTravel: 0
+  itemName: Bolts
+  itemDescription: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+    eiusmod tempor incididunt ut labore et dolore magna aliqua. Faucibus interdum
+    posuere lorem ipsum dolor sit amet consectetur adipiscing. Mollis aliquam ut
+    porttitor leo a diam sollicitudin tempor. Magna eget est lorem ipsum. Nisl rhoncus
+    mattis rhoncus urna neque viverra justo. Donec ultrices tincidunt arcu non sodales
+    neque sodales ut etiam. Pharetra magna ac placerat vestibulum. Ut aliquam purus
+    sit amet luctus. Enim nulla aliquet porttitor lacus luctus accumsan.
