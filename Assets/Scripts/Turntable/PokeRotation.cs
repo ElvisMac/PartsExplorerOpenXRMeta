@@ -27,6 +27,38 @@ public class PokeRotation : MonoBehaviour
     Rigidbody rb;
     #endregion
 
+    #region TurntableVariables
+    [Header("Turntable Shape")]
+    [SerializeField]
+    [Tooltip("The local height of the upper section of the turntable.")]
+    private float _tableHeight;
+    public float TableHeight => _tableHeight;
+
+    [SerializeField]
+    [Tooltip("The radius of the upper section of the turntable.")]
+    private float _tableRadius;
+    public float TableRadius => _tableRadius;
+
+    [SerializeField]
+    [Tooltip("The length of the edge that connects the upper and lower sections of the turntable.")]
+    private float _edgeLength;
+
+    [Range(0, 90)]
+    [SerializeField]
+    [Tooltip("The angle the edge forms with the upper section of the turntable.")]
+    private float _edgeAngle = 45;
+
+    public float LowerLevelHeight
+    {
+        get { return _tableHeight - _edgeLength * Mathf.Sin(_edgeAngle * Mathf.Deg2Rad); }
+    }
+
+    public float LowerLevelRadius
+    {
+        get { return _tableRadius + _edgeLength * Mathf.Cos(_edgeAngle * Mathf.Deg2Rad); }
+    }
+    #endregion
+
     #region Default Methods
     void Start()
     {
