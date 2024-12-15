@@ -1,9 +1,12 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ModelController : MonoBehaviour
 {
+    #region Variables
     List<ToggleColliders> colliders;
+    #endregion
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -12,7 +15,6 @@ public class ModelController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update() { }
 
     private void InitialiseColliders()
     {
@@ -23,5 +25,10 @@ public class ModelController : MonoBehaviour
             colliders.Add(thisCollider);
             thisCollider.FlipColliders();
         }
+    }
+
+    public void ExplodeComponents()
+    {
+        AllEventsMgr.ToggleExplode();
     }
 }
