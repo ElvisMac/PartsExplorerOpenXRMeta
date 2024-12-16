@@ -3,6 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
+/*  The Execute always flag must be enabled to make sure the notches get generated.  
+ *  Just uncomment it then refresh the Unity editor. Once the notches have been 
+ *  generated, come back to this script and comment the ExecuteAlways below, save
+ *  then refresh the editor again.  At this point you should be able to drop the 
+ *  colliders for each prefab into the colliders list in the XR Interactable that
+ *  you are using. This script only serves as a way to generate those notches. 
+ *  Once its done then it can be disabled on the turntable asset in the inspector.
+*/
+// [ExecuteAlways]
 public class TurntableVisuals : MonoBehaviour
 {
     [SerializeField]
@@ -22,6 +31,12 @@ public class TurntableVisuals : MonoBehaviour
 
     void OnEnable()
     {
+        GenerateNotches();
+    }
+
+    // Creates the prefabs around the turntable ring that are used for making it rotate.
+    private void GenerateNotches()
+    {
         float angleStep = 360f / segments;
         for (int i = 0; i < segments; i++)
         {
@@ -39,6 +54,8 @@ public class TurntableVisuals : MonoBehaviour
             instance.transform.localPosition = position;
             instance.transform.LookAt(visualParent);
 
+            // Each prefab needed a post Instantiation adjustment to make them face the correct position.
+            // For some reason it didn't matter which way the prefab was rotated prior, it always sat reversed.
             Vector3 adjustedXRot = instance.transform.eulerAngles;
             adjustedXRot.x = -45f;
             instance.transform.eulerAngles = adjustedXRot;

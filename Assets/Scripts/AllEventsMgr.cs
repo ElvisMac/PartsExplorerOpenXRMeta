@@ -5,6 +5,8 @@ public static class AllEventsMgr
 {
     #region Public Events
     public static event Action OnToggle;
+    public static event Action OnAttached;
+    public static event Action OnDetached;
 
     #endregion
 
@@ -15,5 +17,14 @@ public static class AllEventsMgr
         OnToggle.Invoke();
     }
 
+    public static void ItemAttached()
+    {
+        OnAttached.Invoke();
+    }
+
+    public static void ItemDetached()
+    {
+        OnDetached.Invoke();
+    }
     #endregion
 }

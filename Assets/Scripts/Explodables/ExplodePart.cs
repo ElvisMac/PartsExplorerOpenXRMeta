@@ -12,6 +12,7 @@ public class ExplodePart : MonoBehaviour
 
     float lerpSpeed = 1f;
     bool isExploded = false;
+    bool canExplode = false;
 
     #endregion
 
@@ -23,21 +24,37 @@ public class ExplodePart : MonoBehaviour
     void OnEnable()
     {
         AllEventsMgr.OnToggle += LerpSetup;
+        AllEventsMgr.OnAttached += EnableExploding;
+        AllEventsMgr.OnDetached += DisableExploding;
     }
 
     void OnDisable()
     {
         AllEventsMgr.OnToggle -= LerpSetup;
+        AllEventsMgr.OnAttached -= EnableExploding;
+        AllEventsMgr.OnDetached -= DisableExploding;
+    }
+
+    private void EnableExploding()
+    {
+        canExplode = true;
+    }
+
+    private void DisableExploding()
+    {
+        canExplode = false;
     }
 
     private void LerpSetup()
     {
-        Debug.Log("Can We Lerp?");
-        StopAllCoroutines();
-        currentPosition = transform.localPosition;
-        destinationPosition = isExploded ? startPosition : endPosition;
-        isExploded = !isExploded;
-        StartCoroutine(LerpToPosition(currentPosition, destinationPosition));
+        if(canExplode)
+        {
+            StopAllCoroutines();
+            currentPosition = transform.localPosition;
+            destinationPosition = isExploded ? startPosition : endPosition;
+            isExploded = !isExploded;
+            StartCoroutine(LerpToPosition(currentPosition, destinationPosition));
+        }
     }
 
     IEnumerator LerpToPosition(Vector3 start, Vector3 end)

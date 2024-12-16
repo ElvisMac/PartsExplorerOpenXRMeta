@@ -4,6 +4,7 @@ using UnityEngine;
 public class ToggleColliders : MonoBehaviour
 {
     bool isExploded = false;
+    bool canToggleColliders = false;
     Collider childCollider;
 
     List<Transform> childTransforms;
@@ -15,8 +16,19 @@ public class ToggleColliders : MonoBehaviour
         FlipColliders();
     }
 
-    // Update is called once per frame
-    void Update() { }
+    private void OnEnable()
+    {
+        AllEventsMgr.OnToggle += ToggleExplode;
+        AllEventsMgr.OnAttached += SetColliderToggleTrue;
+        AllEventsMgr.OnDetached += SetColliderToggleFalse;
+    }
+
+    private void OnDisable()
+    {
+        AllEventsMgr.OnToggle -= ToggleExplode;
+        AllEventsMgr.OnAttached -= SetColliderToggleTrue;
+        AllEventsMgr.OnDetached -= SetColliderToggleFalse;
+    }
 
     private void GetChildrenTransforms()
     {
@@ -41,7 +53,19 @@ public class ToggleColliders : MonoBehaviour
 
     public void ToggleExplode()
     {
-        isExploded = !isExploded;
-        FlipColliders();
+        if (canToggleColliders)
+        {
+            isExploded = !isExploded;
+            FlipColliders();
+        }
+    }
+
+    private void SetColliderToggleTrue()
+    {
+        canToggleColliders = true;
+    }
+    private void SetColliderToggleFalse()
+    {
+        canToggleColliders = false;
     }
 }
