@@ -110,7 +110,6 @@ public class PokeRotation : MonoBehaviour
 
     private void OnFirstHoverEntered(HoverEnterEventArgs args)
     {
-        Debug.Log("HoverTriggered");
         if (args.interactorObject.handedness == InteractorHandedness.Left)
         {
             useLeftHand = true;

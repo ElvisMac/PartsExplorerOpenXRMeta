@@ -5,6 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 public class AttachedToAnchor : MonoBehaviour
 {
     XRSocketInteractor interactor;
+    ModelController controllerControl;
 
     private void Awake()
     {
@@ -25,11 +26,13 @@ public class AttachedToAnchor : MonoBehaviour
 
     private void SendAttachedMessage(SelectEnterEventArgs args)
     {
-        AllEventsMgr.ItemAttached();
+        controllerControl = args.interactableObject.transform.GetComponent<ModelController>();
+        controllerControl.CanToggle = true;
     }
 
     private void SendDetachedMessage(SelectExitEventArgs args)
     {
-        AllEventsMgr.ItemDetached();
+        controllerControl.CanToggle = false;
+        controllerControl = null;
     }
 }

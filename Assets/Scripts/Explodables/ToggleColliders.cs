@@ -4,10 +4,8 @@ using UnityEngine;
 public class ToggleColliders : MonoBehaviour
 {
     bool isExploded = false;
-    bool canToggleColliders = false;
-    Collider childCollider;
 
-    List<Transform> childTransforms;
+    List<Collider> childTransforms;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -16,26 +14,12 @@ public class ToggleColliders : MonoBehaviour
         FlipColliders();
     }
 
-    private void OnEnable()
-    {
-        AllEventsMgr.OnToggle += ToggleExplode;
-        AllEventsMgr.OnAttached += SetColliderToggleTrue;
-        AllEventsMgr.OnDetached += SetColliderToggleFalse;
-    }
-
-    private void OnDisable()
-    {
-        AllEventsMgr.OnToggle -= ToggleExplode;
-        AllEventsMgr.OnAttached -= SetColliderToggleTrue;
-        AllEventsMgr.OnDetached -= SetColliderToggleFalse;
-    }
-
     private void GetChildrenTransforms()
     {
         if (childTransforms == null)
         {
             childTransforms = new();
-            foreach (Transform child in transform)
+            foreach (Collider child in transform)
             {
                 childTransforms.Add(child);
             }
@@ -44,28 +28,15 @@ public class ToggleColliders : MonoBehaviour
 
     public void FlipColliders()
     {
-        foreach (Transform child in childTransforms)
+        foreach (Collider child in childTransforms)
         {
-            childCollider = child.GetComponent<Collider>();
-            childCollider.enabled = isExploded;
+            child.enabled = isExploded;
         }
     }
 
-    public void ToggleExplode()
+    public void ToggleChildColliders()
     {
-        if (canToggleColliders)
-        {
-            isExploded = !isExploded;
-            FlipColliders();
-        }
-    }
-
-    private void SetColliderToggleTrue()
-    {
-        canToggleColliders = true;
-    }
-    private void SetColliderToggleFalse()
-    {
-        canToggleColliders = false;
+        isExploded = !isExploded;
+        FlipColliders();
     }
 }
