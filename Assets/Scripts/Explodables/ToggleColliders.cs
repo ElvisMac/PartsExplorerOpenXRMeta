@@ -8,7 +8,7 @@ public class ToggleColliders : MonoBehaviour
     List<Collider> childTransforms;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
         GetChildrenTransforms();
         FlipColliders();
@@ -19,9 +19,9 @@ public class ToggleColliders : MonoBehaviour
         if (childTransforms == null)
         {
             childTransforms = new();
-            foreach (Collider child in transform)
+            foreach (Transform child in transform)
             {
-                childTransforms.Add(child);
+                childTransforms.Add(child.GetComponent<Collider>());
             }
         }
     }

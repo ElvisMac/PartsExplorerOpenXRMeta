@@ -1,12 +1,15 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using static UnityEngine.Rendering.DebugUI;
 
 public class ModelController : MonoBehaviour
 {
     #region Variables
-    List<ToggleColliders> colliderControl;
-    List<ExplodePart> explodeParts;
+    XRGrabInteractable thisInteractable;
+    ToggleColliders[] colliderControl;
+    ExplodePart[] explodeParts;
     Collider thisCollider;
     bool isNotExploded = true;
     bool canToggle = false;
@@ -27,6 +30,7 @@ public class ModelController : MonoBehaviour
     void Start()
     {
         thisCollider = GetComponent<Collider>();
+        thisInteractable = GetComponent<XRGrabInteractable>();
         InitialiseChildScripts();
     }
 
@@ -47,21 +51,13 @@ public class ModelController : MonoBehaviour
     private void InitialiseChildScripts()
     {
         thisCollider.enabled = isNotExploded;
-        colliderControl = new();
-        explodeParts = new();
-        foreach (Transform child in transform)
-        {
-            ExplodePart childExplodePart = child.GetComponent<ExplodePart>();
-            ToggleColliders childCollider = child.GetComponent<ToggleColliders>();
-
-            colliderControl.Add(childCollider);
-            explodeParts.Add(childExplodePart);
-        }
+        colliderControl = transform.GetComponentsInChildren<ToggleColliders>();
+        explodeParts = transform.GetComponentsInChildren<ExplodePart>();
     }
 
     private void FlipChildrenColliders() 
     {
-        foreach (ToggleColliders child in transform)
+        foreach (ToggleColliders child in colliderControl)
         {
             child.ToggleChildColliders();
         }
@@ -69,6 +65,7 @@ public class ModelController : MonoBehaviour
 
     private void ExplodeChildrenObjects()
     {
+        
         foreach (ExplodePart part in explodeParts)
         {
             part.AnimateExplosion();
