@@ -4,19 +4,15 @@ using UnityEngine;
 public class ToggleColliders : MonoBehaviour
 {
     bool isExploded = false;
-    Collider childCollider;
 
-    List<Transform> childTransforms;
+    List<Collider> childTransforms;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
         GetChildrenTransforms();
         FlipColliders();
     }
-
-    // Update is called once per frame
-    void Update() { }
 
     private void GetChildrenTransforms()
     {
@@ -25,21 +21,20 @@ public class ToggleColliders : MonoBehaviour
             childTransforms = new();
             foreach (Transform child in transform)
             {
-                childTransforms.Add(child);
+                childTransforms.Add(child.GetComponent<Collider>());
             }
         }
     }
 
     public void FlipColliders()
     {
-        foreach (Transform child in childTransforms)
+        foreach (Collider child in childTransforms)
         {
-            childCollider = child.GetComponent<Collider>();
-            childCollider.enabled = isExploded;
+            child.enabled = isExploded;
         }
     }
 
-    public void ToggleExplode()
+    public void ToggleChildColliders()
     {
         isExploded = !isExploded;
         FlipColliders();

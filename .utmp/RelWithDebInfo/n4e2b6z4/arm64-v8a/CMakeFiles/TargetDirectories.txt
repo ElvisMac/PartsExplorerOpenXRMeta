@@ -1,0 +1,5 @@
+D:/Data/Projects/git/OpenXRMeta/.utmp/RelWithDebInfo/n4e2b6z4/arm64-v8a/CMakeFiles/edit_cache.dir
+D:/Data/Projects/git/OpenXRMeta/.utmp/RelWithDebInfo/n4e2b6z4/arm64-v8a/CMakeFiles/rebuild_cache.dir
+D:/Data/Projects/git/OpenXRMeta/.utmp/RelWithDebInfo/n4e2b6z4/arm64-v8a/GameActivity/CMakeFiles/game.dir
+D:/Data/Projects/git/OpenXRMeta/.utmp/RelWithDebInfo/n4e2b6z4/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+D:/Data/Projects/git/OpenXRMeta/.utmp/RelWithDebInfo/n4e2b6z4/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir

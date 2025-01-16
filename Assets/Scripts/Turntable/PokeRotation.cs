@@ -20,6 +20,11 @@ public class PokeRotation : MonoBehaviour
     private float rotateSpeed;
 
     [SerializeField]
+    private Vector3 _startPosition, _endPosition;
+
+    private float _currentPercent = 0f, _desiredPercent = 0f;
+
+    [SerializeField]
     bool canRotate = false;
     bool useLeftHand = false;
 
@@ -110,7 +115,6 @@ public class PokeRotation : MonoBehaviour
 
     private void OnFirstHoverEntered(HoverEnterEventArgs args)
     {
-        Debug.Log("HoverTriggered");
         if (args.interactorObject.handedness == InteractorHandedness.Left)
         {
             useLeftHand = true;
@@ -161,5 +165,17 @@ public class PokeRotation : MonoBehaviour
             hand = useLeftHand ? leftHand : rightHand;
         }
         return hand;
+    }
+
+    public void SetHeight(float percent)
+    {
+        _desiredPercent = percent;
+        _currentPercent = _desiredPercent;
+        UpdateLerpPosition();
+    }
+
+    private void UpdateLerpPosition()
+    {
+        transform.position = Vector3.Lerp(_startPosition, _endPosition, _currentPercent);
     }
 }

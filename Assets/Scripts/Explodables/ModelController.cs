@@ -1,27 +1,86 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using static UnityEngine.Rendering.DebugUI;
 
 public class ModelController : MonoBehaviour
 {
-    List<ToggleColliders> colliders;
+    #region Variables
+    XRGrabInteractable thisInteractable;
+    ToggleColliders[] colliderControl;
+    ExplodePart[] explodeParts;
+    Collider thisCollider;
+    bool isNotExploded = true;
+    bool canToggle = false;
+    #endregion
+
+    #region Properties
+    public bool CanToggle
+    {
+        get { return canToggle; }
+        set 
+        { 
+            canToggle = value;
+        }
+    }
+    #endregion
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        InitialiseColliders();
+        thisCollider = GetComponent<Collider>();
+        thisInteractable = GetComponent<XRGrabInteractable>();
+        InitialiseChildScripts();
     }
 
-    // Update is called once per frame
-    void Update() { }
-
-    private void InitialiseColliders()
+    private void OnEnable()
     {
-        colliders = new();
-        foreach (Transform child in transform)
+        AllEventsMgr.OnToggleExplode += ExplodeComponents;
+    }
+
+    private void OnDisable()
+    {
+        AllEventsMgr.OnToggleExplode -= ExplodeComponents;
+    }
+
+
+    /* 
+     * Sets the default colliders list with all the child toggle colliders and explodepart scripts
+     */
+    private void InitialiseChildScripts()
+    {
+        thisCollider.enabled = isNotExploded;
+        colliderControl = transform.GetComponentsInChildren<ToggleColliders>();
+        explodeParts = transform.GetComponentsInChildren<ExplodePart>();
+    }
+
+    private void FlipChildrenColliders() 
+    {
+        foreach (ToggleColliders child in colliderControl)
         {
-            ToggleColliders thisCollider = child.GetComponent<ToggleColliders>();
-            colliders.Add(thisCollider);
-            thisCollider.FlipColliders();
+            child.ToggleChildColliders();
+        }
+    }
+
+    private void ExplodeChildrenObjects()
+    {
+        
+        foreach (ExplodePart part in explodeParts)
+        {
+            part.AnimateExplosion();
+        }
+    }
+
+    public void ExplodeComponents()
+    {
+        if (canToggle)
+        {
+            Debug.Log("Trying to Explode the connected part");
+            isNotExploded = !isNotExploded;
+            thisCollider.enabled = isNotExploded;
+            ExplodeChildrenObjects();
+            FlipChildrenColliders();
         }
     }
 }
