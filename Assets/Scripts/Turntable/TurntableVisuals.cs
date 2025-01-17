@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
-/*  The Execute always flag must be enabled to make sure the notches get generated.  
- *  Just uncomment it then refresh the Unity editor. Once the notches have been 
+/*  The Execute always flag must be enabled to make sure the notches get generated.
+ *  Just uncomment it then refresh the Unity editor. Once the notches have been
  *  generated, come back to this script and comment the ExecuteAlways below, save
- *  then refresh the editor again.  At this point you should be able to drop the 
+ *  then refresh the editor again.  At this point you should be able to drop the
  *  colliders for each prefab into the colliders list in the XR Interactable that
- *  you are using. This script only serves as a way to generate those notches. 
+ *  you are using. This script only serves as a way to generate those notches.
  *  Once its done then it can be disabled on the turntable asset in the inspector.
 */
 // [ExecuteAlways]
@@ -26,8 +26,8 @@ public class TurntableVisuals : MonoBehaviour
     [SerializeField]
     private float radius = 0.3f;
 
-    [SerializeField, Range(0.4f, 1.2f)]
-    private float tableHeight = 0.6f;
+    // [SerializeField, Range(0.4f, 1.2f)]
+    // private float tableHeight = 0.6f;
 
     void OnEnable()
     {

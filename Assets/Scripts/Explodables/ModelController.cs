@@ -1,8 +1,5 @@
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
-using static UnityEngine.Rendering.DebugUI;
 
 public class ModelController : MonoBehaviour
 {
@@ -19,10 +16,7 @@ public class ModelController : MonoBehaviour
     public bool CanToggle
     {
         get { return canToggle; }
-        set 
-        { 
-            canToggle = value;
-        }
+        set { canToggle = value; }
     }
     #endregion
 
@@ -44,8 +38,7 @@ public class ModelController : MonoBehaviour
         AllEventsMgr.OnToggleExplode -= ExplodeComponents;
     }
 
-
-    /* 
+    /*
      * Sets the default colliders list with all the child toggle colliders and explodepart scripts
      */
     private void InitialiseChildScripts()
@@ -55,7 +48,7 @@ public class ModelController : MonoBehaviour
         explodeParts = transform.GetComponentsInChildren<ExplodePart>();
     }
 
-    private void FlipChildrenColliders() 
+    private void FlipChildrenColliders()
     {
         foreach (ToggleColliders child in colliderControl)
         {
@@ -65,7 +58,6 @@ public class ModelController : MonoBehaviour
 
     private void ExplodeChildrenObjects()
     {
-        
         foreach (ExplodePart part in explodeParts)
         {
             part.AnimateExplosion();

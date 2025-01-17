@@ -4,11 +4,13 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 [RequireComponent(typeof(AudioSource))]
 [RequireComponent(typeof(XRSimpleInteractable))]
-
 public class HoverPart : MonoBehaviour
 {
-    [SerializeField] private XRSimpleInteractable interactable;
-    [SerializeField] private Material glowMaterial;
+    [SerializeField]
+    private XRSimpleInteractable interactable;
+
+    [SerializeField]
+    private Material glowMaterial;
     private AudioSource hoverSound;
     private Renderer childRend;
     private Material[] defaultMaterial;
@@ -36,6 +38,12 @@ public class HoverPart : MonoBehaviour
             interactable.hoverEntered.AddListener(OnHoverStart);
             interactable.hoverExited.AddListener(OnHoverEnd);
         }
+    }
+
+    private void OnDisable()
+    {
+        interactable.hoverEntered.RemoveListener(OnHoverStart);
+        interactable.hoverExited.RemoveListener(OnHoverEnd);
     }
 
     private void OnHoverStart(HoverEnterEventArgs args)
