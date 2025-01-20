@@ -5,7 +5,7 @@ public class ModelController : MonoBehaviour
 {
     #region Variables
     XRGrabInteractable thisInteractable;
-    ToggleColliders[] colliderControl;
+    //ToggleColliders[] colliderControl;
     ExplodePart[] explodeParts;
     Collider thisCollider;
     bool isNotExploded = true;
@@ -44,17 +44,17 @@ public class ModelController : MonoBehaviour
     private void InitialiseChildScripts()
     {
         thisCollider.enabled = isNotExploded;
-        colliderControl = transform.GetComponentsInChildren<ToggleColliders>();
+        //colliderControl = transform.GetComponentsInChildren<ToggleColliders>();
         explodeParts = transform.GetComponentsInChildren<ExplodePart>();
     }
 
-    private void FlipChildrenColliders()
-    {
-        foreach (ToggleColliders child in colliderControl)
-        {
-            child.ToggleChildColliders();
-        }
-    }
+    //private void FlipChildrenColliders()
+    //{
+    //    foreach (ToggleColliders child in colliderControl)
+    //    {
+    //        child.ToggleChildColliders();
+    //    }
+    //}
 
     private void ExplodeChildrenObjects()
     {
@@ -72,7 +72,7 @@ public class ModelController : MonoBehaviour
             isNotExploded = !isNotExploded;
             thisCollider.enabled = isNotExploded;
             ExplodeChildrenObjects();
-            FlipChildrenColliders();
+            //FlipChildrenColliders();
         }
     }
 }

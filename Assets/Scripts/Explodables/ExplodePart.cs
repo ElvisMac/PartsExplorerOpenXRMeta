@@ -9,6 +9,7 @@ public class ExplodePart : MonoBehaviour
         endPosition;
     Vector3 currentPosition,
         destinationPosition;
+    ToggleColliders colliderControl;
 
     float lerpSpeed = 1f;
     bool isExploded = false;
@@ -19,6 +20,7 @@ public class ExplodePart : MonoBehaviour
     private void Awake()
     {
         transform.localPosition = startPosition;
+        colliderControl = GetComponent<ToggleColliders>();
     }
 
     public void AnimateExplosion()
@@ -27,7 +29,14 @@ public class ExplodePart : MonoBehaviour
         currentPosition = transform.localPosition;
         destinationPosition = isExploded ? startPosition : endPosition;
         isExploded = !isExploded;
-        StartCoroutine(LerpToPosition(currentPosition, destinationPosition));
+        if (isExploded)
+        {
+            StartCoroutine(LerpToPosition(currentPosition, destinationPosition));
+        }
+        else if (!isExploded)
+        {
+            StartCoroutine(ColliderToggle());
+        }
     }
 
     IEnumerator LerpToPosition(Vector3 start, Vector3 end)
@@ -41,5 +50,19 @@ public class ExplodePart : MonoBehaviour
             yield return null;
         }
         transform.localPosition = end;
+        if (isExploded)
+        {
+            yield return StartCoroutine(ColliderToggle());
+        }
+    }
+
+    IEnumerator ColliderToggle()
+    {
+        colliderControl.ToggleChildColliders();
+        yield return null;
+        if (!isExploded)
+        {
+            yield return StartCoroutine(LerpToPosition(currentPosition, destinationPosition));
+        }
     }
 }
