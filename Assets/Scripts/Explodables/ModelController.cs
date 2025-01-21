@@ -1,10 +1,12 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
+[RequireComponent(typeof(XRGrabInteractable))]
 public class ModelController : MonoBehaviour
 {
     #region Variables
     XRGrabInteractable thisInteractable;
+
     //ToggleColliders[] colliderControl;
     ExplodePart[] explodeParts;
     Collider thisCollider;
