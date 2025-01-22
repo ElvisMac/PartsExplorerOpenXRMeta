@@ -12,6 +12,9 @@ public class ModelController : MonoBehaviour
     Collider thisCollider;
     bool isNotExploded = true;
     bool canToggle = false;
+
+    [SerializeField]
+    Vector3 modelDefaultScale;
     #endregion
 
     #region Properties
@@ -28,6 +31,7 @@ public class ModelController : MonoBehaviour
         thisCollider = GetComponent<Collider>();
         thisInteractable = GetComponent<XRGrabInteractable>();
         InitialiseChildScripts();
+        modelDefaultScale = transform.localScale;
     }
 
     private void OnEnable()
@@ -76,5 +80,10 @@ public class ModelController : MonoBehaviour
             ExplodeChildrenObjects();
             //FlipChildrenColliders();
         }
+    }
+
+    public void ResetScale()
+    {
+        transform.localScale = modelDefaultScale;
     }
 }

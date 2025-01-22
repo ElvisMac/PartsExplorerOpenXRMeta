@@ -79,7 +79,28 @@ MonoBehaviour:
     m_TabWidth: 0
   m_Material: {fileID: -3510291589925855861}
   spriteSheet: {fileID: 2800000, guid: 586b40f5a34c90f44813f6033abd9fc5, type: 3}
-  m_SpriteCharacterTable: []
-  m_GlyphTable: []
+  m_SpriteCharacterTable:
+  - m_ElementType: 2
+    m_Unicode: 65534
+    m_GlyphIndex: 0
+    m_Scale: 1
+    m_Name: panel_glass_screws_0
+  m_GlyphTable:
+  - m_Index: 0
+    m_Metrics:
+      m_Width: 64
+      m_Height: 64
+      m_HorizontalBearingX: -32
+      m_HorizontalBearingY: 32
+      m_HorizontalAdvance: 64
+    m_GlyphRect:
+      m_X: 0
+      m_Y: 0
+      m_Width: 64
+      m_Height: 64
+    m_Scale: 1
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
+    sprite: {fileID: -1493226639, guid: 586b40f5a34c90f44813f6033abd9fc5, type: 3}
   spriteInfoList: []
   fallbackSpriteAssets: []
