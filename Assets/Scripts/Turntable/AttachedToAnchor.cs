@@ -28,12 +28,14 @@ public class AttachedToAnchor : MonoBehaviour
     {
         controllerControl = args.interactableObject.transform.GetComponent<ModelController>();
         controllerControl.CanToggle = true;
+        //controllerControl.ModelHeld(true);
         AllEventsMgr.AttachToAnchor();
     }
 
     private void SendDetachedMessage(SelectExitEventArgs args)
     {
         controllerControl.CanToggle = false;
+        //controllerControl.ModelHeld(false);
         controllerControl = null;
         AllEventsMgr.DetachFromAnchor();
     }

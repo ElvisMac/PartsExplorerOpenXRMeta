@@ -5,7 +5,9 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 public class AttachedToDisplay : MonoBehaviour
 {
     XRSocketInteractor interactor;
-    ModelController attachedObject;
+    Transform attachedObject;
+    Vector3 attachedScale = new Vector3(0.5f,0.5f,0.5f);
+    Vector3 originalScale;
 
     private void Awake()
     {
@@ -14,23 +16,25 @@ public class AttachedToDisplay : MonoBehaviour
 
     private void OnEnable()
     {
-        interactor.hoverEntered.AddListener(IsHovering);
+        interactor.selectEntered.AddListener(IsAttached);
         interactor.selectExited.AddListener(IsDetatched);
     }
 
     private void OnDisable()
     {
-        interactor.hoverEntered.RemoveListener(IsHovering);
+        interactor.selectEntered.RemoveListener(IsAttached);
         interactor.selectExited.RemoveListener(IsDetatched);
     }
 
-    private void IsHovering(HoverEnterEventArgs args)
+    private void IsAttached(SelectEnterEventArgs args)
     {
-        attachedObject = args.interactorObject.transform.GetComponent<ModelController>();
+        attachedObject = args.interactableObject.transform;
+        originalScale = attachedObject.localScale;
+        //attachedObject.localScale = attachedScale;
     }
 
     private void IsDetatched(SelectExitEventArgs args)
     {
-        attachedObject.ResetScale();
+        attachedObject.localScale = originalScale;
     }
 }

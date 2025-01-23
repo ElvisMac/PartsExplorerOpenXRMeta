@@ -1,17 +1,18 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 [RequireComponent(typeof(XRGrabInteractable))]
 public class ModelController : MonoBehaviour
 {
     #region Variables
-    XRGrabInteractable thisInteractable;
-
-    //ToggleColliders[] colliderControl;
+    XRGrabInteractable interactable;
     ExplodePart[] explodeParts;
     Collider thisCollider;
     bool isNotExploded = true;
     bool canToggle = false;
+    bool isHeld = false;
 
     [SerializeField]
     Vector3 modelDefaultScale;
@@ -29,18 +30,29 @@ public class ModelController : MonoBehaviour
     void Start()
     {
         thisCollider = GetComponent<Collider>();
-        thisInteractable = GetComponent<XRGrabInteractable>();
         InitialiseChildScripts();
-        modelDefaultScale = transform.localScale;
+    }
+
+    private void Update()
+    {
+        if (isHeld)
+        {
+            transform.localScale = modelDefaultScale;
+        }
     }
 
     private void OnEnable()
     {
+        interactable = GetComponent<XRGrabInteractable>();
+        //interactable.selectEntered.AddListener(ModelHeld);
+        //interactable.selectExited.AddListener(ModelReleased);
         AllEventsMgr.OnToggleExplode += ExplodeComponents;
     }
 
     private void OnDisable()
     {
+        //interactable.selectEntered.RemoveListener(ModelHeld);
+        //interactable.selectExited.RemoveListener(ModelReleased);
         AllEventsMgr.OnToggleExplode -= ExplodeComponents;
     }
 
@@ -54,14 +66,6 @@ public class ModelController : MonoBehaviour
         explodeParts = transform.GetComponentsInChildren<ExplodePart>();
     }
 
-    //private void FlipChildrenColliders()
-    //{
-    //    foreach (ToggleColliders child in colliderControl)
-    //    {
-    //        child.ToggleChildColliders();
-    //    }
-    //}
-
     private void ExplodeChildrenObjects()
     {
         foreach (ExplodePart part in explodeParts)
@@ -74,7 +78,6 @@ public class ModelController : MonoBehaviour
     {
         if (canToggle)
         {
-            Debug.Log("Trying to Explode the connected part");
             isNotExploded = !isNotExploded;
             thisCollider.enabled = isNotExploded;
             ExplodeChildrenObjects();
@@ -82,8 +85,15 @@ public class ModelController : MonoBehaviour
         }
     }
 
-    public void ResetScale()
-    {
-        transform.localScale = modelDefaultScale;
-    }
+    //public void ModelHeld(SelectEnterEventArgs args)
+    //{
+    //    //isHeld = true;
+    //    transform.localScale.Set(modelDefaultScale.x, modelDefaultScale.y, modelDefaultScale.z);
+    //}
+
+    //public void ModelReleased(SelectExitEventArgs args)
+    //{
+    //    //isHeld = false;
+    //}
+
 }
