@@ -1,13 +1,11 @@
-using System.Collections;
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 [RequireComponent(typeof(XRGrabInteractable))]
+[RequireComponent(typeof(Rigidbody))]
 public class ModelController : MonoBehaviour
 {
     #region Variables
-    XRGrabInteractable interactable;
     ExplodePart[] explodeParts;
     Collider thisCollider;
     bool isNotExploded = true;
@@ -43,16 +41,11 @@ public class ModelController : MonoBehaviour
 
     private void OnEnable()
     {
-        interactable = GetComponent<XRGrabInteractable>();
-        //interactable.selectEntered.AddListener(ModelHeld);
-        //interactable.selectExited.AddListener(ModelReleased);
         AllEventsMgr.OnToggleExplode += ExplodeComponents;
     }
 
     private void OnDisable()
     {
-        //interactable.selectEntered.RemoveListener(ModelHeld);
-        //interactable.selectExited.RemoveListener(ModelReleased);
         AllEventsMgr.OnToggleExplode -= ExplodeComponents;
     }
 
@@ -62,7 +55,6 @@ public class ModelController : MonoBehaviour
     private void InitialiseChildScripts()
     {
         thisCollider.enabled = isNotExploded;
-        //colliderControl = transform.GetComponentsInChildren<ToggleColliders>();
         explodeParts = transform.GetComponentsInChildren<ExplodePart>();
     }
 
@@ -81,19 +73,6 @@ public class ModelController : MonoBehaviour
             isNotExploded = !isNotExploded;
             thisCollider.enabled = isNotExploded;
             ExplodeChildrenObjects();
-            //FlipChildrenColliders();
         }
     }
-
-    //public void ModelHeld(SelectEnterEventArgs args)
-    //{
-    //    //isHeld = true;
-    //    transform.localScale.Set(modelDefaultScale.x, modelDefaultScale.y, modelDefaultScale.z);
-    //}
-
-    //public void ModelReleased(SelectExitEventArgs args)
-    //{
-    //    //isHeld = false;
-    //}
-
 }

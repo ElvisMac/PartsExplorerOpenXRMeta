@@ -3,7 +3,52 @@ guid: 5a7b2354f32d01648ab85626f85dd15c
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Line047_mtl
+    second: {fileID: 2100000, guid: e86e3eebd1e08ce429b521905f7874fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Line051_mtl
+    second: {fileID: 2100000, guid: 68889947de6146746bebba2e04650b8d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Line053_mtl
+    second: {fileID: 2100000, guid: 2bf96e5c5a3f6a04490a91c6cee5bf12, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acrylic_pin_mtl
+    second: {fileID: 2100000, guid: fa361b1bdd99b00488e76edf7f9726fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blue_part_mtl
+    second: {fileID: 2100000, guid: 4c2ea089aa4d52b449fb2586f36813da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: digital_printing_mtl
+    second: {fileID: 2100000, guid: 0de86ebce4b3833459525da301806a9d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: illumninate_part_mtl
+    second: {fileID: 2100000, guid: b30b79df6af15b44c8a7ca885f256596, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: transparent_acrylic_mtl
+    second: {fileID: 2100000, guid: 9b2fb7a294282c543bba786e74ffb955, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: white_texture_mtl
+    second: {fileID: 2100000, guid: f9e1cbf6653fc4648975781e1556106c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

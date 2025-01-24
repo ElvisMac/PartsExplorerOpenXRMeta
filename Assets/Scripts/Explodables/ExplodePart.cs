@@ -1,6 +1,12 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
+[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(ToggleColliders))]
+[RequireComponent(typeof(HoverPart))]
+[RequireComponent(typeof(XRSimpleInteractable))]
+[RequireComponent(typeof(AudioSource))]
 public class ExplodePart : MonoBehaviour
 {
     #region Variables
