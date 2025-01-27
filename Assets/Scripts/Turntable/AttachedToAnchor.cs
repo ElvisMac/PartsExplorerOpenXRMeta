@@ -4,6 +4,8 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class AttachedToAnchor : MonoBehaviour
 {
+    [SerializeField]
+    ShelfController shelves;
     XRSocketInteractor interactor;
     ModelController controllerControl;
 
@@ -30,6 +32,8 @@ public class AttachedToAnchor : MonoBehaviour
         controllerControl.CanToggle = true;
         //controllerControl.ModelHeld(true);
         AllEventsMgr.AttachToAnchor();
+        shelves.TriggerShelves();
+        
     }
 
     private void SendDetachedMessage(SelectExitEventArgs args)
