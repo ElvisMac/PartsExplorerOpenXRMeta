@@ -69,6 +69,7 @@ public class PokeRotation : MonoBehaviour
     {
         handSubsystem = GetHandSubSystem();
         rb = GetComponent<Rigidbody>();
+        SetHeight(0.5f);
     }
 
     void Update()

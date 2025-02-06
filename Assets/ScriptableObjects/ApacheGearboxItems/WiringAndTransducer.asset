@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 156c5a6ec06ba05469f25fa793f47c0a, type: 3}
+  m_Name: WiringAndTransducer
+  m_EditorClassIdentifier: 
+  itemName: Wiring & Transducer
+  itemDescription: 'Bibendum convallis himenaeos vehicula accumsan consequat tempor
+    facilisis feugiat. Letius efficitur eu phasellus curae ex ac inceptos ipsum.
+    Dapibus dui arcu ac fames risus hac porta. Pulvinar felis magnis eros sagittis
+    quis odio pretium ornare per risus adipiscing. Facilisis eget vestibulum primis
+    ultricies neque consectetuer integer quam.
+
+
+    Platea placerat laoreet ipsum
+    dui tempus sed dignissim. Dui platea non id placerat duis. Venenatis nulla sodales
+    litora pellentesque potenti primis.'
