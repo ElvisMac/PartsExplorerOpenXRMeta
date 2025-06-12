@@ -12,16 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156c5a6ec06ba05469f25fa793f47c0a, type: 3}
   m_Name: TorquePlate
   m_EditorClassIdentifier: 
-  distanceToMove: 8
-  negativeTravel: 0
   itemName: Torque Plate
-  itemDescription: Ping me build on a culture of contribution and inclusion. We need
-    to dialog around your choice of work attire. No need to talk to users, <br>just
-    base it on the space calculator hard stop, but hop on the bandwagon. Effort made
-    was a lot. It is all exactly as i said, but i don't like it can you send me an
-    invite?, for quick win, for we need to aspirationalise our offerings, for value
-    prop lift and shift. Win-win-win commitment to the cause , for 60% to 30% is
-    a lot of persent big picture put your feelers out, so can we align on lunch orders.
-    Race without a finish line prairie dogging slow-walk our commitment, can you
-    run this by clearance? hot johnny coming through , yet run it up the flag pole,
-    yet build on a culture of contribution and inclusion
+  itemDescription: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non
+    consequatur, est, harum atque rerum, ullam ducimus voluptatum enim nemo repellat
+    nostrum officiis delectus voluptates numquam veniam pariatur amet necessitatibus
+    voluptas! <br>
+
+    Sapiente, et. Id deleniti dolorem laboriosam. Sapiente quisquam,
+    eius enim deserunt odio quis sunt, aliquam optio iste rerum vel, necessitatibus
+    illum in dolorum minima error! Consectetur, culpa necessitatibus? Nesciunt, aut!
+
+    Distinctio
+    et ab odio magnam possimus quibusdam! Recusandae saepe ut, quisquam consectetur
+    accusamus doloremque placeat nisi libero repudiandae iure debitis officia fuga
+    porro. Voluptas, blanditiis dignissimos. Dolor fugiat earum ipsa?'

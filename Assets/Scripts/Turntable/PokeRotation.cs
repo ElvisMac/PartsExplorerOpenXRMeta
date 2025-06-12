@@ -5,6 +5,15 @@ using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
+/*
+ * This might be more convoluted than it needs to be, but this handles the 
+ * height and rotation of the turntable. Far interaction is forced off in 
+ * another script when an object is attached here to prevent constant movement
+ * due to the interference it causes.  Rather than manipulating the rotation 
+ * directly, I chose to apply a force so that the table could rotate freely
+ * and come to a natural stop, rather than sharp, unnatural movements caused
+ * by other rotation methods.
+ */
 public class PokeRotation : MonoBehaviour
 {
     #region Variables

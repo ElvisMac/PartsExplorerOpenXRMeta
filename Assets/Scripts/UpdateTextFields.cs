@@ -4,6 +4,12 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+ * Attaches to the UI element in the scene that displays the information 
+ * that is attached to the item being hovered on when a model is exploded
+ * on the turntable. This is done using the AllEventsManager static 
+ * class.
+ */
 public class UpdateTextFields : MonoBehaviour
 {
     [SerializeField]

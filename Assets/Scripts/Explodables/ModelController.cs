@@ -3,6 +3,12 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 [RequireComponent(typeof(XRGrabInteractable))]
 [RequireComponent(typeof(Rigidbody))]
+
+/*
+ * This is the overall controller that attaches to the top level gameoject that 
+ * contains all of the child components that need to explode apart.  It also
+ * controls other functions that happen when the object is attached to the turntable.
+ */
 public class ModelController : MonoBehaviour
 {
     #region Variables

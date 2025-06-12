@@ -2,6 +2,11 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
+/*
+ * Responsible for the hover effect on the component parts as well as
+ * triggering and sending the required title and description of the part
+ * to the information display in the scene.
+ */
 public class HoverPart : MonoBehaviour
 {
     [SerializeField]

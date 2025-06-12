@@ -4,6 +4,12 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+/*
+ * This can be attached to a TMP ui element and once referenced correctly, 
+ * will display any debug messages you are printing to console. This helped
+ * immensely during early testing when I was trying out new things and learning
+ * how to use the OpenXR framework for interactions.
+ */
 public class DebugDisplay : MonoBehaviour
 {
     Dictionary<string, string> debugLogs = new Dictionary<string, string>();

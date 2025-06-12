@@ -2,6 +2,12 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
+/*
+ * NOT CURRENTLY USED DUE TO SCALING ISSUES
+ * This allows an object to attach to a plynth provided it is the correct item
+ * that should be attaching to it.  This is controlled in the inspector in Unity
+ * when you add a new model that requires a shelf to hold it.
+ */
 public class AttachedToDisplay : MonoBehaviour
 {
     XRSocketInteractor interactor;

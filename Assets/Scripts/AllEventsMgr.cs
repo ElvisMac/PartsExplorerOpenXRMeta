@@ -1,5 +1,13 @@
 using System;
 
+/*
+ * This allows any of the scripts to invoke or subscribe to events listed within
+ * so that they can either trigger, or respond to, any events within.  There is no
+ * need to reference this when triggering as you can just invoke the methods using
+ * the class name followed by the method name.  If you want to listen for these
+ * events being triggered, then there is a bit more that needs adding to the receiving
+ * scripts that you will see as you read further scripts within this project.
+ */
 public static class AllEventsMgr
 {
     #region Public Events
