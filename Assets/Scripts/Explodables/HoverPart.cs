@@ -1,10 +1,12 @@
-using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
-[RequireComponent(typeof(AudioSource))]
-[RequireComponent(typeof(XRSimpleInteractable))]
+/*
+ * Responsible for the hover effect on the component parts as well as
+ * triggering and sending the required title and description of the part
+ * to the information display in the scene.
+ */
 public class HoverPart : MonoBehaviour
 {
     [SerializeField]
@@ -12,6 +14,9 @@ public class HoverPart : MonoBehaviour
 
     [SerializeField]
     private Material glowMaterial;
+
+    [SerializeField]
+    private AssemblySO objectData;
     private AudioSource hoverSound;
     private Renderer childRend;
     private Material[] defaultMaterial;
@@ -50,6 +55,7 @@ public class HoverPart : MonoBehaviour
     private void OnHoverStart(HoverEnterEventArgs args)
     {
         SwapMaterials(glowMatGroup);
+        AllEventsMgr.PartHover(objectData.itemName, objectData.itemDescription);
         hoverSound.Play();
     }
 

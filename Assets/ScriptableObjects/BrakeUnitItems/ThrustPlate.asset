@@ -12,16 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156c5a6ec06ba05469f25fa793f47c0a, type: 3}
   m_Name: ThrustPlate
   m_EditorClassIdentifier: 
-  distanceToMove: -7
-  negativeTravel: 1
   itemName: Thrust Plate
-  itemDescription: Ensure to follow requirements when developing solutions we need
-    this overall to be busier and more active, social currency we need to socialize
-    the comms with the wider stakeholder community driving the initiative forward,<br>
-    for drill down herding cats. Optimize for search can we parallel path, or when
-    does this sunset? high touch client. Back of the net future-proof, but can we
-    align on lunch orders, for increase the pipelines agile, nor sorry i didn't get
-    your email. Can you put it on my calendar? i know you're busy, but work flows
-    , so that jerk from finance really threw me under the bus, nor on your plate
-    even dead cats bounce. I need to pee and then go to another meeting synergize
-    productive mindfulness, or action item.
+  itemDescription: 'Impedit atque expedita molestiae, obcaecati beatae iusto repellendus
+    tempore eum sequi nostrum mollitia officiis? Dolore voluptas reprehenderit fugit!
+    Eligendi laudantium magni corporis in sint fugit, consequuntur ratione doloremque
+    rem et? <br>
+
+    Sint doloribus nam provident reiciendis, dolorum, expedita
+    minima quos autem dolor suscipit dolores totam quidem quisquam odit nihil. Distinctio,
+    optio ex. Amet, mollitia voluptatum. Earum ullam aliquam doloribus ducimus illum.<br>
+
+    Numquam,
+    itaque ratione veritatis at consequuntur aspernatur minima veniam fuga officia,
+    neque, cumque tenetur. Sequi molestiae unde doloribus architecto error dolorem
+    tempora mollitia cupiditate ratione, omnis iure nisi aut ea.'

@@ -1,6 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Collider toggling is handled here for the parts of the object they come under.
+ * Rather than reference each collider explicity, this loops through the child
+ * objects and toggles the colliders on or off.
+ */
 public class ToggleColliders : MonoBehaviour
 {
     bool isExploded = false;

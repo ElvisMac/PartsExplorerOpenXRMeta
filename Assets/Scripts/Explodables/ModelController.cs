@@ -1,15 +1,25 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
+[RequireComponent(typeof(XRGrabInteractable))]
+[RequireComponent(typeof(Rigidbody))]
+
+/*
+ * This is the overall controller that attaches to the top level gameoject that 
+ * contains all of the child components that need to explode apart.  It also
+ * controls other functions that happen when the object is attached to the turntable.
+ */
 public class ModelController : MonoBehaviour
 {
     #region Variables
-    XRGrabInteractable thisInteractable;
-    //ToggleColliders[] colliderControl;
     ExplodePart[] explodeParts;
     Collider thisCollider;
     bool isNotExploded = true;
     bool canToggle = false;
+    bool isHeld = false;
+
+    [SerializeField]
+    Vector3 modelDefaultScale;
     #endregion
 
     #region Properties
@@ -24,8 +34,15 @@ public class ModelController : MonoBehaviour
     void Start()
     {
         thisCollider = GetComponent<Collider>();
-        thisInteractable = GetComponent<XRGrabInteractable>();
         InitialiseChildScripts();
+    }
+
+    private void Update()
+    {
+        if (isHeld)
+        {
+            transform.localScale = modelDefaultScale;
+        }
     }
 
     private void OnEnable()
@@ -44,17 +61,8 @@ public class ModelController : MonoBehaviour
     private void InitialiseChildScripts()
     {
         thisCollider.enabled = isNotExploded;
-        //colliderControl = transform.GetComponentsInChildren<ToggleColliders>();
         explodeParts = transform.GetComponentsInChildren<ExplodePart>();
     }
-
-    //private void FlipChildrenColliders()
-    //{
-    //    foreach (ToggleColliders child in colliderControl)
-    //    {
-    //        child.ToggleChildColliders();
-    //    }
-    //}
 
     private void ExplodeChildrenObjects()
     {
@@ -68,11 +76,9 @@ public class ModelController : MonoBehaviour
     {
         if (canToggle)
         {
-            Debug.Log("Trying to Explode the connected part");
             isNotExploded = !isNotExploded;
             thisCollider.enabled = isNotExploded;
             ExplodeChildrenObjects();
-            //FlipChildrenColliders();
         }
     }
 }

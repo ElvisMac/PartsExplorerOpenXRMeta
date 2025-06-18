@@ -12,7 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156c5a6ec06ba05469f25fa793f47c0a, type: 3}
   m_Name: NutSpacer
   m_EditorClassIdentifier: 
-  distanceToMove: 9
-  negativeTravel: 0
   itemName: Nut Spacer
-  itemDescription: This makes sure the nuts are spaced.
+  itemDescription: 'This makes sure the nuts are spaced.
+
+    <br>
+
+    Consectetur
+    reiciendis temporibus, culpa molestiae repellendus facilis perspiciatis officia
+    minus, voluptatum laborum id ab possimus quo porro ratione! Dignissimos, non
+    fuga. Veritatis omnis eveniet tenetur et at ipsum reprehenderit voluptatibus!'

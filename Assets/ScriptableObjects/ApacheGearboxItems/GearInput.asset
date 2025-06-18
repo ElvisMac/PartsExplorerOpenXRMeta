@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 156c5a6ec06ba05469f25fa793f47c0a, type: 3}
+  m_Name: GearInput
+  m_EditorClassIdentifier: 
+  itemName: Gear Input
+  itemDescription: 'Inceptos rutrum curabitur primis hac leo tortor sociosqu nulla.
+    Tempor venenatis sociosqu suspendisse facilisi blandit cubilia donec mus ut.
+    Nascetur consectetur venenatis letius vulputate aenean. Per tincidunt neque porta
+    sociosqu et eu lacus facilisis. Potenti proin blandit quis gravida habitant inceptos
+    vitae nam. Condimentum laoreet lobortis odio vehicula imperdiet ligula euismod.
+    Magna accumsan libero volutpat dignissim adipiscing curae odio et vitae. Tincidunt
+    euismod lectus tristique risus montes taciti tortor convallis fringilla congue
+    natoque.
+
+    
+
+    Consectetur praesent magna ultricies luctus tincidunt senectus
+    eget sociosqu phasellus. Felis taciti nisl proin eu velit. Natoque hendrerit
+    pretium posuere malesuada tincidunt netus euismod urna nulla curae. Aliquet pharetra
+    massa libero nullam ornare luctus integer lacus per. Tempor quis urna consectetuer
+    suscipit elementum augue volutpat feugiat faucibus quisque. Accumsan letius sociosqu
+    dignissim quam id enim senectus. Placerat tempor velit enim amet magnis curabitur.'

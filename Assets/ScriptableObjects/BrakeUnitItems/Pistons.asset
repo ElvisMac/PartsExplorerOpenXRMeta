@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156c5a6ec06ba05469f25fa793f47c0a, type: 3}
   m_Name: Pistons
   m_EditorClassIdentifier: 
-  distanceToMove: 6
-  negativeTravel: 0
   itemName: Pistons
-  itemDescription: Pistons and housings fitted into the torque plate. <br>Oh, ow!
-    Oh, ow! Burn her anyway! You don't frighten us, English pig-dogs! Go and boil
-    your bottoms, sons of a silly person! I blow my nose at you, so-called Ah-thoor
-    Keeng, you and all your silly English K-n-n-n-n-n-n-n-niggits!
+  itemDescription: 'Repellat, omnis. Modi cum accusamus fugit? Dolore necessitatibus
+    ab, dolor accusamus aut voluptate error quidem vel magnam vero. Cumque iusto
+    veniam qui perferendis ea iste ratione voluptatum necessitatibus atque nostrum.
+
+    Temporibus
+    illo sed atque officia magnam ullam reprehenderit, dolor incidunt. Nostrum debitis
+    consectetur deleniti tempora laudantium sunt quam sapiente exercitationem dolores
+    facilis veritatis cumque, sequi, aliquam esse fuga omnis id!'

@@ -12,10 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156c5a6ec06ba05469f25fa793f47c0a, type: 3}
   m_Name: SingleStator
   m_EditorClassIdentifier: 
-  distanceToMove: -5.5
-  negativeTravel: 1
   itemName: Single Stator
-  itemDescription: Single stator fitted thrust ring ready to be fitted. <br>Listen.
-    Strange women lying in ponds distributing swords is no basis for a system of
-    government. Supreme executive power derives from a mandate from the masses, not
-    from some farcical aquatic ceremony.
+  itemDescription: Single stator fitted thrust ring ready to be fitted. <br>Sapiente,
+    et. Id deleniti dolorem laboriosam. Sapiente quisquam, eius enim deserunt odio
+    quis sunt, aliquam optio iste rerum vel, necessitatibus illum in dolorum minima
+    error! Consectetur, culpa necessitatibus? Nesciunt, aut!

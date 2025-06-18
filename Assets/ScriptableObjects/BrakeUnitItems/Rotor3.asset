@@ -12,10 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156c5a6ec06ba05469f25fa793f47c0a, type: 3}
   m_Name: Rotor3
   m_EditorClassIdentifier: 
-  distanceToMove: -4
-  negativeTravel: 1
   itemName: Rotor
-  itemDescription: 'Third rotor fitted, single stator ready to be fitted. <br>I don''t
-    want to talk to you no more, you empty-headed animal food trough water! I fart
-    in your general direction! Your mother was a hamster and your father smelt of
-    elderberries! Now leave before I am forced to taunt you a second time! '
+  itemDescription: 'Numquam, itaque ratione veritatis at consequuntur aspernatur
+    minima veniam fuga officia, neque, cumque tenetur. Sequi molestiae unde doloribus
+    architecto error dolorem tempora mollitia cupiditate ratione, omnis iure nisi
+    aut ea.
+
+    Dignissimos ut ipsum est odio eum numquam illo consequatur aut
+    laudantium eligendi quibusdam veritatis, hic at, consectetur voluptate deserunt
+    eaque quas ab maxime ipsam dolores sapiente esse. Suscipit, nulla cum?
+
+    Consectetur
+    reiciendis temporibus, culpa molestiae repellendus facilis perspiciatis officia
+    minus, voluptatum laborum id ab possimus quo porro ratione! Dignissimos, non
+    fuga. Veritatis omnis eveniet tenetur et at ipsum reprehenderit voluptatibus!'

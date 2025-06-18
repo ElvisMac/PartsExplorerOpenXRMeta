@@ -1,6 +1,13 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
+/*
+ * This is effectively a brute force disabling of the FarInteraction due
+ * to it turning itself back on when it wasn't required.  This ensures that
+ * when a model is on the turntable that the far interaction doesn't interfere
+ * with rotating the model which proved to be infuriating when trying to 
+ * hover over parts in the exploded state.
+ */
 public class DisableFarInteraction : MonoBehaviour
 {
     private NearFarInteractor interactor;
@@ -19,6 +26,11 @@ public class DisableFarInteraction : MonoBehaviour
         }
     }
 
+    /*
+     * This is how I subscribe to events in the AllEventsManager. When something 
+     * triggers the methods that are subscribed, it will call the methods in this
+     * class that are required to execute on that activation.
+     */
     private void OnEnable()
     {
         AllEventsMgr.OnAttachToAnchor += DisableFarInteractor;
